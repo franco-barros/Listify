@@ -1,0 +1,30 @@
+.Icon-container {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.Icon-container-check--active {
+  color: #fafafa;
+  background-color: #13da1a;
+}
+
+.Icon-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.Icon-containerdelete:hover .Icon-svg {
+  fill: red;
+}
+
+.Icon-containercheck:hover .Icon-svg {
+  fill: #13da1a;
+}
