@@ -1,27 +1,27 @@
 .CreateTodoButton {
-  background-color: #e75f04;
-  box-shadow: 0px 5px 25px rgba(250, 233, 4, 0.925);
+  background-color: #ffa500; /* Naranja claro */
+  box-shadow: 0px 5px 20px rgba(255, 213, 128, 0.7);
   border: none;
-  border-radius: 50px;
+  border-radius: 50%;
   cursor: pointer;
   font-size: 50px;
   position: fixed;
   bottom: 24px;
   right: 24px;
   font-weight: bold;
-  color: #fafafa;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 64px;
   width: 64px;
   transform: rotate(0);
-  transition: 0.3s ease;
-  align-items: center;
-  justify-content: center;
+  transition: transform 0.5s ease;
   z-index: 100;
 }
 
 .CreateTodoButton:hover {
-  transform: rotate(224deg);
+  transform: rotate(360deg);
+  background-color: #ffc966; /* Cambio de tono más claro en hover */
+  box-shadow: 0px 5px 30px rgba(255, 193, 102, 0.8);
 }

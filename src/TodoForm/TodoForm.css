@@ -33,7 +33,7 @@ textarea {
 }
 
 textarea:focus {
-  border-color: #1cd2d8;
+  border-color: #ffa500;
   outline: none;
 }
 
@@ -54,7 +54,7 @@ textarea:focus {
 }
 
 .TodoForm-button--add {
-  background-color: #4caf50;
+  background-color: #0e7911;
   border: none;
   color: white;
   padding: 12px 20px;
@@ -73,7 +73,7 @@ textarea:focus {
 }
 
 .TodoForm-button--cancel {
-  background-color: #f44336;
+  background-color: #f52112;
   border: none;
   color: white;
   padding: 12px 13px;

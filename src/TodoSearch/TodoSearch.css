@@ -14,11 +14,11 @@
 }
 
 .TodoSearch::placeholder {
-  color: #a5a5a5;
+  color: #747272;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: 20;
 }
 
 .TodoSearch:focus {
-  outline-color: #e75f04;
+  outline-color: #ffa500;
 }
