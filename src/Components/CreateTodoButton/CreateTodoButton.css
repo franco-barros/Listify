@@ -1,5 +1,5 @@
 .CreateTodoButton {
-  background-color: #ffa500; /* Naranja claro */
+  background-color: #ffa500;
   box-shadow: 0px 5px 20px rgba(255, 213, 128, 0.7);
   border: none;
   border-radius: 50%;
@@ -22,6 +22,17 @@
 
 .CreateTodoButton:hover {
   transform: rotate(360deg);
-  background-color: #ffc966; /* Cambio de tono más claro en hover */
+  background-color: #ffc966;
   box-shadow: 0px 5px 30px rgba(255, 193, 102, 0.8);
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 480px) {
+  .CreateTodoButton {
+    font-size: 40px; /* Reduce el tamaño de la fuente en móviles */
+    height: 56px;
+    width: 56px;
+    bottom: 16px; /* Ajusta el margen inferior */
+    right: 16px; /* Ajusta el margen derecho */
+  }
 }

@@ -1,16 +1,17 @@
 import React from "react";
 import { useTodos } from "./useTodos";
-import { TodoHeader } from "../TodoHeader";
-import { TodoCounter } from "../TodoCounter";
-import { TodoSearch } from "../TodoSearch";
-import { TodoList } from "../TodoList";
+import { TodoHeader } from "../Components/TodoHeader";
+import { TodoCounter } from "../Components/TodoCounter";
+import { TodoSearch } from "../Components/TodoSearch";
+import { TodoList } from "../Components/TodoList";
 import { TodoItem } from "../TodoItem";
-import { TodosLoading } from "../TodosLoading";
-import { TodosError } from "../TodosError";
-import { EmpyTodos } from "../EmpyTodos";
-import { CreateTodoButton } from "../CreateTodoButton";
-import { Modal } from "../Modal";
-import { TodoForm } from "../TodoForm";
+import { TodosLoading } from "../Components/TodosLoading";
+import { TodosError } from "../Components/TodosError";
+import { EmpyTodos } from "../Components/EmpyTodos";
+import { CreateTodoButton } from "../Components/CreateTodoButton";
+import { Modal } from "../Components/Modal";
+import { TodoForm } from "../Components/TodoForm";
+import { ChangeAlertWithStorageListener } from "../Components/ChangeAlert";
 
 function App() {
   const {
@@ -26,6 +27,7 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
+    sincronizeTodos,
   } = useTodos();
   return (
     <>
@@ -72,6 +74,8 @@ function App() {
           <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
         </Modal>
       )}
+
+      <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
     </>
   );
 }
