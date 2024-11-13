@@ -1,6 +1,5 @@
 import React from "react";
-import { useEffect, useRef } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import { useTodos } from "./useTodos";
 import { TodoHeader } from "../Components/TodoHeader";
 import { TodoCounter } from "../Components/TodoCounter";
@@ -32,14 +31,15 @@ function App() {
     sincronizeTodos,
   } = useTodos();
 
+  const [cancelSync, setCancelSync] = useState(false);
   const sincronizedRef = useRef(false);
 
   useEffect(() => {
-    if (!sincronizedRef.current) {
+    if (!cancelSync && !sincronizedRef.current) {
       sincronizeTodos();
       sincronizedRef.current = true;
     }
-  }, [sincronizeTodos]);
+  }, [sincronizeTodos, cancelSync]);
 
   return (
     <>
@@ -77,8 +77,7 @@ function App() {
           <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
         </Modal>
       )}
-
-      <ChangeAlert sincronize={sincronizeTodos} />
+      <ChangeAlert sincronize={sincronizeTodos} onCancel={setCancelSync} />
     </>
   );
 }

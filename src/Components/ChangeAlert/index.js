@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStorageListener } from "./useStorageListener";
 import "./ChangeAlert.css";
 
-function ChangeAlert({ sincronize }) {
+function ChangeAlert({ sincronize, onCancel }) {
   const { show, toggleShow } = useStorageListener(sincronize);
+  const [shouldShow, setShouldShow] = useState(true);
 
-  if (show) {
+  const handleCancel = () => {
+    setShouldShow(false);
+    onCancel();
+  };
+
+  if (show && shouldShow) {
     return (
       <div className="ChangeAlert-bg">
         <div className="ChangeAlert-container">
           <p>
-            Parece que cambiaste tus TODOs en otra pestaña o ventana del
+            Parece que cambiaste tu lista en otra pestaña o ventana del
             navegador.
           </p>
-          <p>¿Quieres sincronizar tus TODOs?</p>
-          <button onClick={toggleShow}>Sí, sincroniza</button>
+          <p>¿Quieres sincronizar tu lista?</p>
+          <button className="sincronizar" onClick={toggleShow}>
+            Sí, sincroniza
+          </button>
+          <button className="cancelar" onClick={handleCancel}>
+            No sincroniza
+          </button>
         </div>
       </div>
     );
