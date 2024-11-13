@@ -1,12 +1,13 @@
 import React from "react";
 
 function useLocalStorage(itemName, initialValue) {
-  const [sincronizedItem, setSincronizedItem] = React.useState(true);
   const [item, setItem] = React.useState(initialValue);
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(false);
 
-  React.useEffect(() => {
+  // Envuelve la función en useCallback para que no cambie en cada render
+  const sincronizeItem = React.useCallback(() => {
+    setLoading(true);
     setTimeout(() => {
       try {
         const localStorageItem = localStorage.getItem(itemName);
@@ -16,28 +17,27 @@ function useLocalStorage(itemName, initialValue) {
           parsedItem = initialValue;
         } else {
           parsedItem = JSON.parse(localStorageItem);
-          setItem(parsedItem);
         }
 
+        setItem(parsedItem);
         setLoading(false);
-        setSincronizedItem(true);
       } catch (error) {
         setLoading(false);
         setError(true);
       }
-    }, 2000);
-  }, [sincronizedItem]);
+    }, 1000);
+  }, [itemName, initialValue]);
 
   const saveItem = (newItem) => {
-    localStorage.setItem(itemName, JSON.stringify(newItem));
-    setItem(newItem);
+    try {
+      localStorage.setItem(itemName, JSON.stringify(newItem));
+      setItem(newItem);
+    } catch (error) {
+      setError(true);
+    }
   };
 
-  const sincronizeItem = () => {
-    setLoading(true);
-    setSincronizedItem(false);
-  };
-  return { item, saveItem, loading, error, sincronizeItem };
+  return { item, saveItem, sincronizeItem, loading, error };
 }
 
 export { useLocalStorage };

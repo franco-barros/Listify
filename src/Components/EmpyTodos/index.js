@@ -1,7 +1,7 @@
 import React from "react";
 
 function EmpyTodos() {
-  return <p>Crea tu primer TODO'S</p>;
+  return <p>Crea tu primer tarea</p>;
 }
 
 export { EmpyTodos };

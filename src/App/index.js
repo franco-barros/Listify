@@ -4,14 +4,14 @@ import { TodoHeader } from "../Components/TodoHeader";
 import { TodoCounter } from "../Components/TodoCounter";
 import { TodoSearch } from "../Components/TodoSearch";
 import { TodoList } from "../Components/TodoList";
-import { TodoItem } from "../TodoItem";
+import { TodoItem } from "../Components/TodoItem";
 import { TodosLoading } from "../Components/TodosLoading";
 import { TodosError } from "../Components/TodosError";
 import { EmpyTodos } from "../Components/EmpyTodos";
 import { CreateTodoButton } from "../Components/CreateTodoButton";
 import { Modal } from "../Components/Modal";
 import { TodoForm } from "../Components/TodoForm";
-import { ChangeAlertWithStorageListener } from "../Components/ChangeAlert";
+import { ChangeAlert } from "../Components/ChangeAlert";
 
 function App() {
   const {
@@ -29,6 +29,7 @@ function App() {
     addTodo,
     sincronizeTodos,
   } = useTodos();
+
   return (
     <>
       <TodoHeader loading={loading}>
@@ -48,15 +49,6 @@ function App() {
         onEmptySearchResults={(searchText) => (
           <p>No hay resultados para {searchText}</p>
         )}
-        // render={(todo) => (
-        //   <TodoItem
-        //     key={todo.text}
-        //     text={todo.text}
-        //     completed={todo.completed}
-        //     onComplete={() => completeTodo(todo.text)}
-        //     onDelete={() => deleteTodo(todo.text)}
-        //   />
-        // )}
       >
         {(todo) => (
           <TodoItem
@@ -75,7 +67,7 @@ function App() {
         </Modal>
       )}
 
-      <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
+      <ChangeAlert sincronize={sincronizeTodos} />
     </>
   );
 }
