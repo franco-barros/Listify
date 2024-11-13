@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect, useRef } from "react";
+
 import { useTodos } from "./useTodos";
 import { TodoHeader } from "../Components/TodoHeader";
 import { TodoCounter } from "../Components/TodoCounter";
@@ -29,6 +31,15 @@ function App() {
     addTodo,
     sincronizeTodos,
   } = useTodos();
+
+  const sincronizedRef = useRef(false);
+
+  useEffect(() => {
+    if (!sincronizedRef.current) {
+      sincronizeTodos();
+      sincronizedRef.current = true;
+    }
+  }, [sincronizeTodos]);
 
   return (
     <>
