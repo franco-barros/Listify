@@ -22,7 +22,7 @@ function useStorageListener(sincronize) {
     setTimeout(() => {
       sincronize();
       setStorageChange(false);
-    }, 2000);
+    });
   };
 
   return {
