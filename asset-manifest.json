@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Listify/static/css/main.eca4c09e.css",
-    "main.js": "/Listify/static/js/main.e4e2ebeb.js",
+    "main.css": "/Listify/static/css/main.fdc5cb72.css",
+    "main.js": "/Listify/static/js/main.501fd0f8.js",
     "index.html": "/Listify/index.html",
     "static/media/DeleteIcon.svg": "/Listify/static/media/DeleteIcon.84e4a932c97ebd0c6c78dd05068de6fb.svg",
     "static/media/CheckIcon.svg": "/Listify/static/media/CheckIcon.869a5e77f19ab8e1fd324a52c184d1b0.svg",
-    "main.eca4c09e.css.map": "/Listify/static/css/main.eca4c09e.css.map",
-    "main.e4e2ebeb.js.map": "/Listify/static/js/main.e4e2ebeb.js.map"
+    "main.fdc5cb72.css.map": "/Listify/static/css/main.fdc5cb72.css.map",
+    "main.501fd0f8.js.map": "/Listify/static/js/main.501fd0f8.js.map"
   },
   "entrypoints": [
-    "static/css/main.eca4c09e.css",
-    "static/js/main.e4e2ebeb.js"
+    "static/css/main.fdc5cb72.css",
+    "static/js/main.501fd0f8.js"
   ]
 }
