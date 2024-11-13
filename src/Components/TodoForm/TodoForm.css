@@ -3,33 +3,32 @@ form {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 20px 350px;
+  max-width: 500px;
+  margin: 20px auto; /* Centrado horizontal */
   font-family: Arial, sans-serif;
 }
 
 label {
   font-size: 16px;
-  font-family: inherit;
   color: #333;
   font-weight: bold;
   margin-bottom: 8px;
-  display: flex;
-  color: #333;
+  display: block;
+  text-align: center;
 }
 
 textarea {
-  width: 80%;
-  height: 150px;
+  max-width: 400px; /* Ancho máximo para evitar que se haga muy grande */
+  height: 100px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   resize: none;
   font-size: 14px;
-  font-family: inherit;
   color: #333;
   background-color: #fff;
-  margin-bottom: 16px;
+  margin: 0 auto 16px; /* Centrado horizontal */
+  display: block;
 }
 
 textarea:focus {
@@ -43,50 +42,32 @@ textarea:focus {
   margin-top: 16px;
 }
 
-.TodoForm-button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
 .TodoForm-button--add {
   background-color: #0e7911;
-  border: none;
   color: white;
-  padding: 12px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 8px;
-  cursor: pointer;
+  padding: 10px 16px;
+  border: none;
   border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.boton-anadir:hover {
-  background-color: #000000;
+.TodoForm-button--add:hover {
+  background-color: #066a0b;
 }
 
 .TodoForm-button--cancel {
   background-color: #f52112;
-  border: none;
   color: white;
-  padding: 12px 13px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 0px;
-  cursor: pointer;
+  padding: 10px 16px;
+  border: none;
   border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.button--cancel:hover {
-  background-color: #000000;
+.TodoForm-button--cancel:hover {
+  background-color: #cc1b0d;
 }

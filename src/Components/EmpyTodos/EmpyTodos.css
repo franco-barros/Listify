@@ -1,0 +1,27 @@
+.emptyTodoText {
+  font-size: 1.5rem;
+  color: #333; /* Cambia este color si prefieres otro */
+  text-align: center;
+  margin: 2rem auto;
+}
+
+@media (max-width: 600px) {
+  .emptyTodoText {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .emptyTodoText {
+    font-size: 1.4rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .emptyTodoText {
+    font-size: 1.5rem;
+    padding: 2rem;
+  }
+}

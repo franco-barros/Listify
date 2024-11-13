@@ -26,13 +26,12 @@
   box-shadow: 0px 5px 30px rgba(255, 193, 102, 0.8);
 }
 
-/* Media query para pantallas pequeñas */
 @media (max-width: 480px) {
   .CreateTodoButton {
-    font-size: 40px; /* Reduce el tamaño de la fuente en móviles */
+    font-size: 40px;
     height: 56px;
     width: 56px;
-    bottom: 16px; /* Ajusta el margen inferior */
-    right: 16px; /* Ajusta el margen derecho */
+    bottom: 16px;
+    right: 16px;
   }
 }

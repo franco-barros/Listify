@@ -20,11 +20,11 @@ function TodoForm({ setOpenModal, addTodo }) {
 
   return (
     <form onSubmit={onSubmit}>
-      <label>Escribe tu nuevo TODO</label>
+      <label>Escribe algo nuevo en tu lista de tareas</label>
       <textarea
         value={newTodoValue}
         onChange={onChange}
-        placeholder="Crear nuevo TODO"
+        placeholder="Crear una nueva tarea"
         required
       />
       <div className="TodoForm-ButtonsContainer">
